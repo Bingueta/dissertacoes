@@ -7,12 +7,7 @@ use App\Http\Controllers\ObraController;
 
 Route::apiResource('pessoas', PessoaController::class);
 
-//Precisei fazer a rota 'funcoes' assim, pois tive que mudar o nome do objeto no controller devido a um conflito com o nome da coluna na tabela
-//E se i nome do objeto for diferente
-Route::get('funcoes', [FuncaoController::class, 'index']);
-Route::post('funcoes', [FuncaoController::class, 'store']);
-Route::get('funcoes/{obj_funcao}', [FuncaoController::class, 'show']);
-Route::put('funcoes/{obj_funcao}', [FuncaoController::class, 'update']);
-Route::delete('funcoes/{obj_funcao}', [FuncaoController::class, 'destroy']);
+Route::apiResource('funcoes', FuncaoController::class)
+    ->parameters(['funcoes' => 'funcao']); //Isso foi necessário pois o laravel estava considerando o singular de 'funcoes' como 'funco'
 
 Route::apiResource('obras', ObraController::class);

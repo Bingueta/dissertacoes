@@ -10,7 +10,7 @@ class Funcao extends Model
 
     protected $primaryKey = 'id_funcao';
 
-    protected $fillable = ['funcao'];
+    protected $fillable = ['nome_funcao'];
 
     public $timestamps = false;
 }
