@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('estados', function (Blueprint $table) {
-            $table->integer('id_estado', true);
-            $table->string('nome_estado');
-            $table->integer('id_pais')->index('id_pais');
+        Schema::create('paises', function (Blueprint $table) {
+            $table->integer('id_pais', true);
+            $table->string('nome_pais');
+            $table->decimal('latitude', 9, 6)->nullable();
+            $table->decimal('longitude', 9, 6)->nullable();
         });
     }
 
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('estados');
+        Schema::dropIfExists('paises');
     }
 };
