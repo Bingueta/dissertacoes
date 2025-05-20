@@ -15,6 +15,8 @@ return new class extends Migration
             $table->integer('id_local_especifico', true);
             $table->string('nome_local')->nullable();
             $table->integer('id_cidade')->index('id_cidade');
+            $table->decimal('latitude', 9, 6)->nullable();
+            $table->decimal('longitude', 9, 6)->nullable();
         });
     }
 
