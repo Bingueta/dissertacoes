@@ -15,4 +15,9 @@ class LocalEspecifico extends Model
         'longitude'
     ];
     public $timestamps = false;
+
+    public function cidade()
+    {
+        return $this->belongsTo(Cidade::class, 'id_cidade');
+    }
 }

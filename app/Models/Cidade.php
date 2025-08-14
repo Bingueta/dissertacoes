@@ -15,4 +15,9 @@ class Cidade extends Model
         'longitude'
     ];
     public $timestamps = false;
+
+    public function estado()
+    {
+        return $this->belongsTo(Estado::class, 'id_estado');
+    }
 }

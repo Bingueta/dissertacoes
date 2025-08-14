@@ -4,15 +4,89 @@ namespace App\Http\Controllers;
 
 use App\Models\Obra;
 use Illuminate\Http\Request;
-use App\Models\RelObrasPessoas;
-use App\Models\RelObrasLocalizacoes;
-use App\Models\RelObrasPalavrasChave;
+use App\Http\Resources\PessoaResource;
+use App\Http\Resources\PalavraChaveResource;
 
 class ObraController extends Controller
 {
     public function index()
     {
-        return Obra::all();
+        $obras = Obra::with([
+            'palavrasChave',
+            'pessoas',
+            'localizacoes.cidade.estado.pais'
+        ])->get();
+
+        $result = [];
+
+        foreach ($obras as $obra) {
+            $obraArray = [
+                'id_obra' => $obra->id_obra,
+                'titulo' => $obra->titulo,
+                'ano' => $obra->ano,
+                'acervo' => $obra->acervo,
+                'link_pdf' => $obra->link_pdf,
+                'resumo' => $obra->resumo,
+                'autor' => null,
+                'orientador' => null,
+                'coorientador' => null,
+                'palavras_chave' => PalavraChaveResource::collection($obra->palavrasChave),
+                'localidades' => [],
+            ];
+
+            foreach ($obra->pessoas as $pessoa) {
+                $idFuncao = $pessoa->pivot->id_funcao ?? null;
+                $dadosPessoa = [
+                    'id_pessoa' => $pessoa->id_pessoa,
+                    'nome_pessoa' => $pessoa->nome_pessoa,
+                ];
+
+                if ($idFuncao === 1) {
+                    $obraArray['autor'] = $dadosPessoa;
+                } elseif ($idFuncao === 2) {
+                    $obraArray['orientador'] = $dadosPessoa;
+                } elseif ($idFuncao === 3) {
+                    $obraArray['coorientador'] = $dadosPessoa;
+                }
+            }
+
+            foreach ($obra->localizacoes as $local) {
+                $cidade = $local->cidade;
+                $estado = $cidade ? $cidade->estado : null;
+                $pais = $estado ? $estado->pais : null;
+
+                $obraArray['localidades'][] = [
+                    'local_especifico' => [
+                        'id_local_especifico' => $local->id_local_especifico,
+                        'nome_local' => $local->nome_local,
+                        'latitude' => $local->latitude,
+                        'longitude' => $local->longitude,
+                    ],
+                    'cidade' => $cidade ? [
+                        'id_cidade' => $cidade->id_cidade,
+                        'nome_cidade' => $cidade->nome_cidade,
+                        'latitude' => $cidade->latitude,
+                        'longitude' => $cidade->longitude,
+                    ] : null,
+                    'estado' => $estado ? [
+                        'id_estado' => $estado->id_estado,
+                        'nome_estado' => $estado->nome_estado,
+                        'latitude' => $estado->latitude,
+                        'longitude' => $estado->longitude,
+                    ] : null,
+                    'pais' => $pais ? [
+                        'id_pais' => $pais->id_pais,
+                        'nome_pais' => $pais->nome_pais,
+                        'latitude' => $pais->latitude,
+                        'longitude' => $pais->longitude,
+                    ] : null,
+                ];
+            }
+
+            $result[] = $obraArray;
+        }
+
+        return $result;
     }
 
     public function store(Request $request)
@@ -67,7 +141,76 @@ class ObraController extends Controller
 
     public function show(Obra $obra)
     {
-        return $obra;
+        $obra->load([
+            'palavrasChave',
+            'pessoas',
+            'localizacoes.cidade.estado.pais'
+        ]);
+
+        $result = [
+            'id_obra' => $obra->id_obra,
+            'titulo' => $obra->titulo,
+            'ano' => $obra->ano,
+            'acervo' => $obra->acervo,
+            'link_pdf' => $obra->link_pdf,
+            'resumo' => $obra->resumo,
+            'autor' => null,
+            'orientador' => null,
+            'coorientador' => null,
+            'palavras_chave' => PalavraChaveResource::collection($obra->palavrasChave),
+            'localidades' => [],
+        ];
+
+        foreach ($obra->pessoas as $pessoa) {
+            $idFuncao = $pessoa->pivot->id_funcao ?? null;
+            $dadosPessoa = [
+                'id_pessoa' => $pessoa->id_pessoa,
+                'nome_pessoa' => $pessoa->nome_pessoa,
+            ];
+
+            if ($idFuncao === 1) {
+                $result['autor'] = $dadosPessoa;
+            } elseif ($idFuncao === 2) {
+                $result['orientador'] = $dadosPessoa;
+            } elseif ($idFuncao === 3) {
+                $result['coorientador'] = $dadosPessoa;
+            }
+        }
+
+        foreach ($obra->localizacoes as $local) {
+            $cidade = $local->cidade;
+            $estado = $cidade ? $cidade->estado : null;
+            $pais = $estado ? $estado->pais : null;
+
+            $result['localidades'][] = [
+                'local_especifico' => [
+                    'id_local_especifico' => $local->id_local_especifico,
+                    'nome_local' => $local->nome_local,
+                    'latitude' => $local->latitude,
+                    'longitude' => $local->longitude,
+                ],
+                'cidade' => $cidade ? [
+                    'id_cidade' => $cidade->id_cidade,
+                    'nome_cidade' => $cidade->nome_cidade,
+                    'latitude' => $cidade->latitude,
+                    'longitude' => $cidade->longitude,
+                ] : null,
+                'estado' => $estado ? [
+                    'id_estado' => $estado->id_estado,
+                    'nome_estado' => $estado->nome_estado,
+                    'latitude' => $estado->latitude,
+                    'longitude' => $estado->longitude,
+                ] : null,
+                'pais' => $pais ? [
+                    'id_pais' => $pais->id_pais,
+                    'nome_pais' => $pais->nome_pais,
+                    'latitude' => $pais->latitude,
+                    'longitude' => $pais->longitude,
+                ] : null,
+            ];
+        }
+
+        return $result;
     }
 
     public function update(Request $request, Obra $obra)

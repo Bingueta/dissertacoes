@@ -17,27 +17,11 @@ class Obra extends Model
     ];
     public $timestamps = false;
 
-    
-    public function pessoasRel()
-    {
-        return $this->hasMany(RelObrasPessoas::class, 'id_obra');
-    }
-
-    public function palavrasRel()
-    {
-        return $this->hasMany(RelObrasPalavrasChave::class, 'id_obra');
-    }
-
-    public function localizacoesRel()
-    {
-        return $this->hasMany(RelObrasLocalizacoes::class, 'id_obra');
-    }
-
     public function pessoas()
     {
         return $this->belongsToMany(Pessoa::class, 'rel_obras_pessoas', 'id_obra', 'id_pessoa')
-            ->withPivot('id_funcao')
-            ->with('funcao');
+            ->withPivot('id_funcao');
+            //->with('funcao');
     }
 
     public function palavrasChave()
