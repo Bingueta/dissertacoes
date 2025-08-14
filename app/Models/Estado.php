@@ -15,4 +15,9 @@ class Estado extends Model
         'longitude'
     ];
     public $timestamps = false;
+
+    public function pais()
+    {
+        return $this->belongsTo(Pais::class, 'id_pais');
+    }
 }
