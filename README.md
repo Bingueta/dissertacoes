@@ -1,34 +1,43 @@
-Gerenciador de Dissertações – OBIT / UNIVALE
-Sobre o Projeto
+# Gerenciador de Dissertações – OBIT / UNIVALE
 
-Este projeto tem como objetivo desenvolver uma aplicação para facilitar o gerenciamento e a visualização das dissertações produzidas no Programa de Mestrado em Gestão Integrada do Território (GIT) da Universidade do Vale do Rio Doce (UNIVALE).
+## 1. Sobre o Projeto
 
-As dissertações são acompanhadas e divulgadas pelo Observatório Interdisciplinar do Território (OBIT), que mantém um dashboard público no Power BI, disponível no site oficial: obit.univale.br.
+O **Gerenciador de Dissertações** é uma aplicação voltada para o gerenciamento e a visualização das dissertações produzidas no **Programa de Mestrado em Gestão Integrada do Território (GIT)** da **Universidade do Vale do Rio Doce (UNIVALE)**.
 
-O sistema está sendo projetado para oferecer recursos administrativos e de integração de dados, permitindo não apenas a exibição das informações, mas também a manutenção e atualização do banco de dados que serve de base para as visualizações.
+As dissertações são acompanhadas e divulgadas pelo **Observatório Interdisciplinar do Território (OBIT)**, que mantém um dashboard público no Power BI, disponível em: [obit.univale.br](https://obit.univale.br).
 
-Este projeto está sendo desenvolvido como parte de uma bolsa de Iniciação Científica, com apoio da Fundação de Amparo à Pesquisa do Estado de Minas Gerais (FAPEMIG) e da Universidade do Vale do Rio Doce (UNIVALE).
+O sistema está sendo projetado para:
 
-Status do Desenvolvimento
+-   Oferecer recursos administrativos para manutenção do banco de dados de dissertações.
+-   Possibilitar a atualização e integração dos dados utilizados nas visualizações.
+-   Complementar o dashboard atual com funcionalidades de consulta e gestão.
 
-Em andamento – Fase atual: implementação da API em Laravel.
+Este projeto está sendo desenvolvido como parte de uma bolsa de **Iniciação Científica**, com apoio da **Fundação de Amparo à Pesquisa do Estado de Minas Gerais (FAPEMIG)** e da **Universidade do Vale do Rio Doce (UNIVALE)**.
 
-Tecnologias
+---
 
-Back-end (API): Laravel
+## 2. Status do Desenvolvimento
 
-Front-end: a ser definido (desenvolvimento em etapa futura)
+-   **Em andamento** – Etapa atual: implementação da API em Laravel.
 
-Roadmap
+---
 
-Desenvolvimento da API com Laravel
+## 3. Tecnologias
 
-Desenvolvimento da interface front-end
+-   **Back-end (API)**: Laravel
+-   **Front-end**: a ser definido (desenvolvimento em etapa futura)
 
-Integração entre front-end e back-end
+---
 
-Testes e implantação
+## 4. Roadmap
 
-Recursos
+-   [x] Desenvolvimento da API com Laravel
+-   [ ] Desenvolvimento da interface front-end
+-   [ ] Integração entre front-end e back-end
+-   [ ] Testes e implantação
 
-Dashboard oficial do OBIT no Power BI: obit.univale.br
+---
+
+## 5. Recursos
+
+-   **Dashboard oficial do OBIT no Power BI**: [obit.univale.br](https://obit.univale.br)
