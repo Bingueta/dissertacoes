@@ -1,0 +1,80 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Fundo */
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #007bff url("../images/bg.jpg") no-repeat center center/cover;
+}
+
+/* Container branco */
+.login-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  text-align: center;
+}
+
+/* Espaço para o logo */
+.login-logo {
+  margin-bottom: 20px;
+}
+.login-logo img {
+  max-width: 200px;
+}
+
+/* Inputs */
+.login-container input {
+	width: 100%;
+	padding: 10px;
+	margin: 10px 0;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	font-size: 16px;
+}
+
+/* Botão */
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  background: #004aad;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.login-container button:hover {
+  background: #00327a;
+}
+
+/* Links extras */
+.login-container .extra {
+  margin-top: 15px;
+  font-size: 14px;
+}
+.login-container .extra a {
+  color: #004aad;
+  text-decoration: none;
+}
+.login-container .extra a:hover {
+  text-decoration: underline;
+}
+
+/* Seleção de idioma */
+.login-footer {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #666;
+}
