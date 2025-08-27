@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Cadastro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Cadastro Geral</h2>
+
+    <!-- Botões para abrir os diferentes modais -->
+    <button class="abrirModal btn" data-modal="palavra">+ Palavra-chave</button>
+    <button class="abrirModal btn" data-modal="pessoa">+ Nome Completo</button>
+    <button class="abrirModal btn" data-modal="metodologia">+ Metodologia</button>
+    <button class="abrirModal btn" data-modal="tematica">+ Temática</button>
+    <button class="abrirModal btn" data-modal="pais">+ País</button>
+    <button class="abrirModal btn" data-modal="estado">+ Estado</button>
+    <button class="abrirModal btn" data-modal="cidade">+ Cidade</button>
+    <button class="abrirModal btn" data-modal="local">+ Local Específico</button>
+  </div>
+
+  <!-- Estrutura genérica do Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="fecharModal" class="close">&times;</span>
+      <h2 id="modalTitulo"></h2>
+
+      <form id="modalForm"></form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

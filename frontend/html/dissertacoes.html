@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>CRUD Dissertações</title>
+  <link rel="stylesheet" href="../assets/styles/dissertacoes.css">
+</head>
+<body>
+  <h1>Cadastro de Dissertações</h1>
+
+  <!-- Formulário -->
+  <form id="formDissertacao">
+  <label>Título:</label>
+  <input type="text" id="titulo" required><br>
+
+<div class="form-row">
+  <div class="form-group">
+    <label>Link PDF:</label>
+    <input type="url" id="linkPdf" required>
+  </div>
+  <div class="form-group">
+    <label>Ano:</label>
+    <input type="number" id="ano" required>
+  </div>
+</div>
+
+  <!-- Pessoas -->
+  <h3>Pessoas</h3>
+  <label>Autor:</label>
+  <select id="autor" required></select><br>
+
+  <label>Orientador:</label>
+  <select id="orientador" required></select><br>
+
+<div class="form-row align-center">
+  <div class="form-group">
+    <label>Coorientador:</label>
+    <select id="coorientador"></select>
+  </div>
+  <div class="form-group right-checkbox">
+    <label for="semCoorientador">Não possui coorientador</label>
+    <input type="checkbox" id="semCoorientador">
+  </div>
+</div>
+
+  <br><br>
+
+  <!-- Palavras-chave -->
+  <h3>Palavras-chave</h3>
+  <input type="text" id="buscaPalavra" placeholder="Pesquisar palavra-chave...">
+  <div id="sugestoes"></div>
+
+  <div id="palavrasSelecionadas" class="tag-container"></div>
+
+  <br>
+  <label>Localidades:</label>
+  <input type="text" id="localidades"><br>
+
+<h3>Metodologias</h3>
+<input type="text" id="buscaMetodologia" placeholder="Pesquisar metodologia...">
+<div id="sugestoesMetodologia"></div>
+<div id="metodologiasSelecionadas" class="tag-container"></div>
+
+
+<h3>Temáticas</h3>
+<input type="text" id="buscaTematica" placeholder="Pesquisar temática...">
+<div id="sugestoesTematica"></div>
+<div id="tematicasSelecionadas" class="tag-container"></div>
+
+  <button type="submit">Salvar</button>
+</form>
+
+
+  <hr>
+
+  <!-- Tabela de dissertações -->
+  <h2>Lista de Dissertações</h2>
+  <table border="1" id="tabelaDissertacoes">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Ano</th>
+        <th>Pessoas</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- As dissertações serão listadas aqui -->
+    </tbody>
+  </table>
+
+  <script src="../assets/scripts/dissertacoes.js"></script>
+</body>
+</html>

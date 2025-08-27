@@ -1,0 +1,100 @@
+ body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Botão */
+.btn {
+  padding: 10px 20px;
+  background: #2e86de;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #2e86de;
+}
+
+/* Modal */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000;
+  left: 0; 
+  top: 0; 
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0, 0, 0, 0.6); /* fundo escuro */
+  justify-content: center; 
+  align-items: center; 
+}
+
+/* Conteúdo do modal */
+.modal-content {
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  text-align: left; /* alinhamento */
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+/* Fechar (X) */
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Título */
+.modal-content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000000; /* azul parecido */
+}
+
+/* Formulário */
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Labels */
+.modal-content label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Inputs */
+.modal-content input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
+}
+
+/* Botão */
+.modal-content .btn {
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  background: #2e86de;
+  color: white;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.modal-content .btn:hover {
+  background: #0d133d;
+}
