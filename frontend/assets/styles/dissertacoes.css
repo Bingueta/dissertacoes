@@ -116,14 +116,18 @@ table button:last-child:hover {
 }
 
 /* Área de sugestões */
-#sugestoes {
+#sugestoesPalavra, 
+#sugestoesMetodologia, 
+#sugestoesTematica {
   border: 1px solid #ccc;
+  border-radius: 5px;
   max-height: 150px;
   overflow-y: auto;
-  background: white;
-  position: absolute;
-  width: 300px;
-  z-index: 10;
+  margin-top: 5px;
+  background: #fff;
+  position: absolute; /* fica embaixo do input */
+  z-index: 1000;
+  width: 200px;
 }
 
 form select {
@@ -170,10 +174,13 @@ form h3 {
 .sugestao {
   padding: 8px;
   cursor: pointer;
+  background: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+  transition: background 0.2s;
 }
 
 .sugestao:hover {
-  background: #f1f1f1;
+  background: #e2e6ea;
 }
 
 /* Tags selecionadas */
@@ -234,3 +241,51 @@ form h3 {
   font-weight: normal;
 }
 
+/* Tooltip container */
+.tooltip {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 14px;
+  margin-left: 5px;
+  color: #3498db; /* azul bonitinho */
+  font-weight: bold;
+}
+
+/* Tooltip texto escondido */
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 200px;
+  background: #2c3e50;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 8px;
+  position: absolute;
+  z-index: 3000;
+  bottom: 125%; /* aparece acima do ícone */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 13px;
+}
+
+/* Setinha do balão */
+.tooltip .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* abaixo do balão */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #2c3e50 transparent transparent transparent;
+}
+
+/* Mostrar tooltip ao passar o mouse */
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}

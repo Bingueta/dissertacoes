@@ -9,66 +9,130 @@
   <h1>Cadastro de Dissertações</h1>
 
   <!-- Formulário -->
-  <form id="formDissertacao">
-  <label>Título:</label>
-  <input type="text" id="titulo" required><br>
+	<form id="formDissertacao">
+		<label>Título: 
+			<span class="tooltip">
+				ⓘ
+				<span class="tooltip-text">Pessoa responsável pela autoria da dissertação</span>
+			</span>
+		</label>
+		<input type="text" id="titulo" required><br>
 
-<div class="form-row">
-  <div class="form-group">
-    <label>Link PDF:</label>
-    <input type="url" id="linkPdf" required>
-  </div>
-  <div class="form-group">
-    <label>Ano:</label>
-    <input type="number" id="ano" required>
-  </div>
-</div>
+		<div class="form-row">
+		<div class="form-group">
+			<label>Link PDF:
+			<span class="tooltip">
+				ⓘ
+				<span class="tooltip-text">Link para o arquivo PDF da dissertação</span>
+			</span>
+			</label>
+			<input type="url" id="linkPdf" required>
+		</div>
+		<div class="form-group">
+			<label>Ano:
+				<span class="tooltip">
+				ⓘ
+				<span class="tooltip-text">Ano de publicação da dissertação</span>
+				</span>
+			</label>
+			<input type="number" id="ano" required>
+		</div>
+		</div>
 
-  <!-- Pessoas -->
-  <h3>Pessoas</h3>
-  <label>Autor:</label>
-  <select id="autor" required></select><br>
+	<!-- Pessoas -->
+		<h3>Pessoas <span class="tooltip"> ⓘ <span class="tooltip-text">Pessoas que paticiparam da dissertação (Autor(a), Orientador(a), Coorientador(a))</span> </h3>
 
-  <label>Orientador:</label>
-  <select id="orientador" required></select><br>
+		<label>Autor(a):
+			<span class="tooltip">
+				ⓘ
+			<span class="tooltip-text">Autor da dissertação</span>
+			</span>
+		</label>
+		<select id="autor" required></select><br>
 
-<div class="form-row align-center">
-  <div class="form-group">
-    <label>Coorientador:</label>
-    <select id="coorientador"></select>
-  </div>
-  <div class="form-group right-checkbox">
-    <label for="semCoorientador">Não possui coorientador</label>
-    <input type="checkbox" id="semCoorientador">
-  </div>
-</div>
+		<label>Orientador(a):
+			<span class="tooltip">
+				ⓘ
+			<span class="tooltip-text">Orientador da dissertação</span>
+			</span>
+		</label>
+		<select id="orientador" required></select><br>
 
-  <br><br>
+		<div class="form-row align-center">
+		<div class="form-group">
+			<label>Coorientador(a):
+				<span class="tooltip">
+					ⓘ
+				<span class="tooltip-text">Coorientador da dissertação (se houver)</span>
+				</span>
+			</label>
+			<select id="coorientador"></select>
+		</div>
+		<div class="form-group right-checkbox">
+			<label for="semCoorientador">Não possui coorientador(a)
+				<span class="tooltip">
+				ⓘ
+				<span class="tooltip-text">Marque se a dissertação não possuir coorientador(a)</span>
+				</span>
+			</label>
+			<input type="checkbox" id="semCoorientador">
+		</div>
+		</div>
 
-  <!-- Palavras-chave -->
-  <h3>Palavras-chave</h3>
-  <input type="text" id="buscaPalavra" placeholder="Pesquisar palavra-chave...">
-  <div id="sugestoes"></div>
+	<br><br>
 
-  <div id="palavrasSelecionadas" class="tag-container"></div>
+	<!-- Palavras-chave -->
+		<h3>Palavras-chave 
+			<span class="tooltip"> ⓘ
+			<span class="tooltip-text">
+				Pesquise e selecione as Palavras-chave da dissertação
+			</span>
+			</span>
+		</h3>
+		<input type="text" id="buscaPalavra" placeholder="Pesquisar palavra-chave...">
+		<div id="sugestoesPalavra"></div>
+		<div id="palavrasSelecionadas" class="tag-container"></div>
 
-  <br>
-  <label>Localidades:</label>
-  <input type="text" id="localidades"><br>
+		<br>
+		<label>Localidades:
+			<span class="tooltip">
+			ⓘ
+			<span class="tooltip-text">
+				Locais ou regiões que a dissertação aborda.
+			</span>
+			</span>
+		</label>
+		<input type="text" id="localidades"><br>
 
-<h3>Metodologias</h3>
-<input type="text" id="buscaMetodologia" placeholder="Pesquisar metodologia...">
-<div id="sugestoesMetodologia"></div>
-<div id="metodologiasSelecionadas" class="tag-container"></div>
+		<h3>Metodologias
+			<span class="tooltip">
+			ⓘ
+			<span class="tooltip-text">
+				Abordagens ou métodos usados na dissertação para realizar o estudo.  
+				Ex: pesquisa de campo, estudo de caso, questionário, análise documental.
+			</span>
+			</span>
+		</h3>
+		<input type="text" id="buscaMetodologia" placeholder="Pesquisar metodologia...">
+		<div id="sugestoesMetodologia"></div>
+		<div id="metodologiasSelecionadas" class="tag-container"></div>
 
 
-<h3>Temáticas</h3>
-<input type="text" id="buscaTematica" placeholder="Pesquisar temática...">
-<div id="sugestoesTematica"></div>
-<div id="tematicasSelecionadas" class="tag-container"></div>
+		<h3>Temáticas
+			<span class="tooltip">
+			ⓘ
+			<span class="tooltip-text">
+				Assuntos principais tratados pela dissertação.  
+				Ex: educação, meio ambiente, saúde, território.
+			</span>
+			</span>
+		</h3>
+		<input type="text" id="buscaTematica" placeholder="Pesquisar temática...">
+		<div id="sugestoesTematica"></div>
+		<div id="tematicasSelecionadas" class="tag-container"></div>
 
-  <button type="submit">Salvar</button>
-</form>
+		<button type="submit">Salvar</button>
+	</form>
 
 
   <hr>
