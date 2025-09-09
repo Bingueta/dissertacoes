@@ -97,15 +97,6 @@
 		<div id="palavrasSelecionadas" class="tag-container"></div>
 
 		<br>
-		<label>Localidades:
-			<span class="tooltip">
-			ⓘ
-			<span class="tooltip-text">
-				Locais ou regiões que a dissertação aborda.
-			</span>
-			</span>
-		</label>
-		<input type="text" id="localidades"><br>
 
 		<h3>Metodologias
 			<span class="tooltip">
@@ -133,6 +124,39 @@
 		<input type="text" id="buscaTematica" placeholder="Pesquisar temática...">
 		<div id="sugestoesTematica"></div>
 		<div id="tematicasSelecionadas" class="tag-container"></div>
+
+		<h3>Localidades
+			<span class="tooltip"> ⓘ
+				<span class="tooltip-text">
+					Adicione um ou mais locais de abrangência da pesquisa.
+				</span>
+			</span>
+		</h3>
+
+		<div id="localidadesSelecionadas" class="tag-container"></div>
+
+		<div class="add-local-box">
+			<h4>Adicionar Nova Localidade</h4>
+			<div class="form-row">
+				<div class="form-group">
+					<label>País:</label>
+					<select id="paisSelect"></select>
+				</div>
+				<div class="form-group">
+					<label>Estado:</label>
+					<select id="estadoSelect" disabled></select>
+				</div>
+				<div class="form-group">
+					<label>Cidade:</label>
+					<select id="cidadeSelect" disabled></select>
+				</div>
+				<div class="form-group">
+					<label>Local Específico:</label>
+					<select id="localEspecificoSelect" disabled></select>
+				</div>
+			</div>
+			<button type="button" id="btnAddLocalidade">Adicionar Localidade</button>
+		</div>
 
 		<button type="submit">Salvar</button>
 	</form>

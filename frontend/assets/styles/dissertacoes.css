@@ -8,7 +8,7 @@
 
 body {
   background: #f4f6f9;
-  padding: 20px;
+  padding: 0px 20px 20px 20px;
   color: #333;
 }
 
@@ -24,8 +24,9 @@ form {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
-  margin: 0 auto 30px auto; /* <-- centraliza horizontalmente */
-  max-width: 600px;
+  margin: 0 auto 30px auto;
+  width: 90%; /* <--- Ocupa 90% da largura disponível */
+  max-width: 1200px; /* <--- Mas não passa de 1200px */
 }
 
 form label {
@@ -121,6 +122,21 @@ table button:last-child {
 
 table button:last-child:hover {
   background: #c0392b;
+}
+
+.linha-detalhes td {
+    background-color: #f9f9f9; /* Um cinza bem claro para diferenciar */
+    padding: 0;
+}
+
+.conteudo-detalhes {
+    padding: 15px;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.conteudo-detalhes strong {
+    color: #274480; /* Cor principal do seu tema */
 }
 
 /* Área de sugestões */
