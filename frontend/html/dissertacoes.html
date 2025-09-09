@@ -4,12 +4,15 @@
   <meta charset="UTF-8">
   <title>CRUD Dissertações</title>
   <link rel="stylesheet" href="../assets/styles/dissertacoes.css">
+  <link rel="stylesheet" href="../assets/styles/navbar.css">
 </head>
 <body>
-  <h1>Cadastro de Dissertações</h1>
+
 
   <!-- Formulário -->
-	<form id="formDissertacao">
+	<div id="view-formulario" style="display: none;">
+        <h2 id="form-titulo">Cadastrar Dissertação</h2>
+        <form id="formDissertacao">
 		<label>Título: 
 			<span class="tooltip">
 				ⓘ
@@ -133,13 +136,17 @@
 
 		<button type="submit">Salvar</button>
 	</form>
+        <button id="btn-cancelar">Cancelar</button>
+    </div>
 
 
   <hr>
 
   <!-- Tabela de dissertações -->
-  <h2>Lista de Dissertações</h2>
-  <table border="1" id="tabelaDissertacoes">
+   <div id="view-lista">
+        <h2>Lista de Dissertações</h2>
+        <button id="btn-nova-dissertacao">Cadastrar Nova Dissertação</button>
+        <table id="tabelaDissertacoes">
     <thead>
       <tr>
         <th>Título</th>
@@ -152,6 +159,7 @@
       <!-- As dissertações serão listadas aqui -->
     </tbody>
   </table>
+    </div>
 
   <script src="../assets/scripts/dissertacoes.js"></script>
 </body>

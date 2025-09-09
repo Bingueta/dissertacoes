@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('estados', function (Blueprint $table) {
-            $table->foreign(['id_pais'], 'estados_ibfk_1')->references(['id_pais'])->on('paises')->onUpdate('restrict')->onDelete('restrict');
-        });
+        Schema::create('tematicas', function (Blueprint $table) {
+			$table->integer('id_tematica', true);
+			$table->string('tematica', 256);
+			$table->timestamps();
+		});
     }
 
     /**
@@ -21,8 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('estados', function (Blueprint $table) {
-            $table->dropForeign('estados_ibfk_1');
-        });
+        Schema::dropIfExists('tematicas');
     }
 };

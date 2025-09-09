@@ -1,0 +1,45 @@
+/* Navbar */
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+#logo img {
+    height: 40px; /* ou o tamanho que você quiser */
+    width: auto;
+    cursor: pointer;
+}
+/* Logo */
+#logo {
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+/* Links */
+#nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s;
+}
+
+/* Hover nos links */
+#nav-links a:hover {
+    color: #ffcc00;
+}
+
+#navbar {
+    margin: -20px -20px 10px -20px; /* anula o padding horizontal e superior do body */
+    padding: 10px 20px; /* padding interno da navbar */
+    background-color: #274480;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

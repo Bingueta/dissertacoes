@@ -9,6 +9,8 @@ use App\Http\Controllers\PaisController;
 use App\Http\Controllers\EstadoController;
 use App\Http\Controllers\CidadeController;
 use App\Http\Controllers\LocalEspecificoController;
+use App\Http\Controllers\TematicaController;
+use App\Http\Controllers\MetodologiaController;
 
 Route::apiResource('pessoas', PessoaController::class);
 
@@ -29,3 +31,7 @@ Route::apiResource('cidades', CidadeController::class);
 
 Route::apiResource('locais-especificos', LocalEspecificoController::class)
     ->parameters(['locais-especificos' => 'localEspecifico']);
+
+Route::apiResource('tematicas', TematicaController::class);
+
+Route::apiResource('metodologias', MetodologiaController::class);
